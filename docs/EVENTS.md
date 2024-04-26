@@ -6,7 +6,6 @@ Triggered when the tardis is taking off
 #### Example
 
 ```lua
-local event, character = os.pullEvent("onTakeOff")
 if os.pullEvent() == 'onTakeOff' then
   --do stuff
 end
@@ -35,9 +34,10 @@ Triggered when the tardis has been entered by a player. Also gives the name of t
 #### Example
 
 ```lua
-local event, side, player = os.pullEvent() 
+local event, side, players = os.pullEvent() 
 if event == 'onTardisEntered' then
-  --do stuff
+  print(textutils.serialise(players))
+  --do other stuff
 end
 ```
 
